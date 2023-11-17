@@ -1,5 +1,6 @@
 <?php
-session_start();
+
+
 $userDatabase = isset($_SESSION['userDatabase']) ? $_SESSION['userDatabase'] : [];
 $currentUsername = isset($_SESSION['currentUser']) ? $_SESSION['currentUser'] : '';
 
@@ -28,7 +29,7 @@ function displayLeaderboard() {
     foreach ($combinedData as $user => $points) {
         $highlightClass = ($user === $currentUsername) ? 'current-user' : '';
 
-     echo "<li class ='$highlightClass'>{$user} = {$points} points</li>";
+        echo "<li class ='$highlightClass'>{$user} = {$points} points</li>";
     }
     echo "</ul>";
 }

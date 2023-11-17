@@ -16,12 +16,24 @@
     z-index: 100;
 }
 
-.cloudOne {
+/* Existing Styles */
+/* ... */
 
+/* New Animation Keyframes */
+@keyframes moveCloud {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(500px); }
+}
+
+
+
+.cloudOne {
+    animation: moveCloud 20s linear infinite;
 }
 
 .cloudTwo {
     padding-left: 400px;
+    animation: moveCloud 20s linear infinite;
 }
 
 .careBar {
@@ -73,3 +85,39 @@ input[type="submit"] {
     margin-bottom: 150px !important;
     float: left;
 }
+
+@keyframes walkAnimation {
+    100%, 100% { transform: translateX(0); } /* Start and end at the original position */
+    50% { transform: translateX(350px); } /* Move forward to 300px at halfway point */
+}
+
+.walking {
+    animation: walkAnimation 4s linear 2; /* 4 seconds for a full forward and back cycle, repeated twice */
+}
+
+@keyframes runAnimation {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(500px); } /* Adjust distance and speed as needed */
+}
+
+.running {
+    animation: runAnimation 1s linear 2;;
+}
+
+.treat-image {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    position: absolute; /* For positioning relative to the dog */
+    left: [value]; /* Adjust as needed */
+    top: [value]; /* Adjust as needed */
+}
+
+.food-image {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    position: absolute; /* Position relative to the parent element */
+    left: [desired left position]; /* Adjust as needed */
+    top: [desired top position]; /* Adjust as needed */
+}
+
+
